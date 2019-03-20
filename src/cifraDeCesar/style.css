@@ -1,0 +1,44 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.App {
+    width: 900px;
+    background: #292020;
+}
+
+.container {
+    display: flex;
+}
+
+h3 {
+    color: #FFF;
+    margin: 0 30px;
+    margin-bottom: 20px;
+}
+
+.left, .right {
+    width: 448px;
+    margin: 100px 0 50px;
+    text-align: center;
+}
+
+.container-cifra {
+    display: flex;
+    align-items: center;
+}
+
+.input-cifra{
+    margin: 0 30px;
+    margin-bottom: 20px;
+}
+
+.container-cifra h3 {
+    margin: 0 10px 0 100px;
+    margin-bottom: 20px;
+}
+
+
+

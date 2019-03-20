@@ -1,0 +1,30 @@
+.header {
+    background: #211412;
+    height: 100px;
+    display: flex;
+    text-align: center;
+}
+
+.header h2 {
+    color: #FFF;
+    margin: 0 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-top: 30px;
+    width: 299px;
+}
+
+.header .link {
+    color: #FFF;
+    text-decoration: none;
+    margin: 0 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-top: 35px;
+    width: 299px;
+}
+
+.header .link:hover {
+    color: #AAA;
+    font-size: 1.1em;
+}
