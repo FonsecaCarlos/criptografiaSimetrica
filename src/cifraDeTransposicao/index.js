@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
-import { vegenere } from '../common/cifra'
+import React, { Component } from 'react';
 import Layout from '../common/layout'
+import { vegenere } from '../common/cifra'
 
-class Vegenere extends Component {
-    
+class Transposicao extends Component {
     constructor (props) {
         super(props)
         this.state = { chave: "", texto: '', textoCifrado: '' }
@@ -36,7 +35,7 @@ class Vegenere extends Component {
   
     render() {
         return (
-            <Layout tituloCifra="Vigenère"
+            <Layout tituloCifra="Transposição"
                 tituloDescifra="Texto cifrado"
 
                 inputValue={this.state.chave}
@@ -52,4 +51,4 @@ class Vegenere extends Component {
     }
 }
  
-export default Vegenere
+export default Transposicao;

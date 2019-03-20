@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import { InputTextarea } from 'primereact/inputtextarea'
-import './style.css'
 import { criptografar } from '../common/cifra'
 
-const LINHA = 15, COLUNA = 50
+import Layout from '../common/layout'
 
 class CifraDeCesar extends Component {
 
@@ -12,6 +10,12 @@ class CifraDeCesar extends Component {
       this.state = { tamanho: 0, texto: '', textoCifrado: '' }
       this.cifraTexto = this.cifraTexto.bind(this)
       this.alteraTamanho = this.alteraTamanho.bind(this)
+      this.cesar = this.cesar.bind(this)
+    }
+
+    cesar() {
+      const cifra = criptografar(this.state.texto, this.state.tamanho)
+      this.setState( {textoCifrado: cifra} )
     }
 
     cifraTexto(e) {
@@ -19,8 +23,7 @@ class CifraDeCesar extends Component {
       
       this.setState({ texto: campo })
 
-      const cesar = criptografar(campo, this.state.tamanho)
-      this.setState({textoCifrado: cesar })
+      this.cesar()
     }
 
     alteraTamanho(e) {
@@ -28,35 +31,22 @@ class CifraDeCesar extends Component {
       
       this.setState( {tamanho: parseInt(num)} )
       
-      const cesar = criptografar(this.state.texto, this.state.tamanho)
-      this.setState( {textoCifrado: cesar} )
+      this.cesar()
     }
 
     render() {
       return (
-          <div className="container">
-            <div className='left'>
-              <div className='container-cifra'>
-                <h3>Tamanho da cifra:</h3>
-                <input type="number" value={ this.state.tamanho } className='input-cifra'
-                  min="0" max="25"
-                  onChange={ this.alteraTamanho  }/>
-              </div>
+          <Layout tituloCifra="Tamanho da cifra"
+                  tituloDescifra="Texto cifrado"
 
-              <InputTextarea rows={LINHA} cols={COLUNA} value={this.state.texto} 
-                onChange={ this.cifraTexto }
-                autoResize={false} 
-                placeholder="Digite aqui..."/>
-            </div>
+                  inputValue={this.state.tamanho}
+                  inputType="number"
+                  inputOnChange={this.alteraTamanho}
 
-            <div className='right'>
-              <h3>Texto cifrado:</h3>
-              <InputTextarea rows={LINHA} cols={COLUNA} value={this.state.textoCifrado} 
-                readOnly={true}
-                autoResize={false} />
-            </div>
-
-          </div>
+                  texto={this.state.texto}
+                  textoCifrado={this.state.textoCifrado}
+                  
+                  cifraTexto={this.cifraTexto}/>
       );
     }
   }

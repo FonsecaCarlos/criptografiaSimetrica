@@ -12,10 +12,10 @@ const cifraCaracter = (element, tamanho) => {
 }
 
 const criptografar = (text, tamanho) => {
-    let cifra='';
+    let cifra=''
 
     for (let index=0; index < text.length; index++) {
-      let element = text.charAt(index);
+      let element = text.charAt(index)
       
       cifra = `${cifra}${cifraCaracter(element, tamanho)}`
     }
@@ -23,4 +23,31 @@ const criptografar = (text, tamanho) => {
     return cifra;
 }
 
-export { criptografar }
+const getPosicao = (letra) => {
+    let posicao = -1
+    alfabeto.forEach((elemento, indice) => {
+        if(letra===elemento){
+            posicao = indice
+        }
+    })
+    return posicao
+}
+
+const vegenere = (text, chave) => {
+    let cifra = ''
+    let letra = ''
+    let letraChave = ''
+    let num = 0
+
+    for(let i=0; i<text.length; i++) {
+        letra = text.charAt(i)
+        letraChave = chave.charAt(i%chave.length)
+
+        num = ( getPosicao(letraChave) )
+        
+        cifra = `${cifra}${criptografar(letra, num)}`
+    }
+    return cifra
+}
+
+export { criptografar, vegenere }
