@@ -1,20 +1,20 @@
 # criptografiaSimetrica
 
-Este projeto foi desenvolvido na disciplina de Auditoria de Sistemas da Informação, no curso de Análise e Desenvolvimento de Sistemas, do Instituto Federal de Educação, Ciência e Tecnologia do Mato Grosso do Sul, campus Nova Andradina. O professor orientador dessa aplicação foi o Fábio Duarte de Oliveira.
+Este projeto foi desenvolvido na disciplina de Auditoria de Sistemas da Informação, no curso de Análise e Desenvolvimento de Sistemas, do Instituto Federal de Educação, Ciência e Tecnologia do Mato Grosso do Sul (IFMS), campus Nova Andradina. O professor orientador dessa aplicação foi o Fábio Duarte de Oliveira.
 
-Essa aplicação foi desenvolvida usando apenas [ReactJS](https://reactjs.org/).
+Essa aplicação foi desenvolvida usando [ReactJS](https://reactjs.org/).
 
-Para executar esse repositório em sua máquina siga os seguintes comandos dentro do diretório raiz:
+Para executar esse repositório em sua máquina siga os seguintes comandos dentro da pasta raiz do projeto após clonar o repositório:
 
-Instale as dependências do projeto:
+Primeiro instale as dependências do projeto:
 > `$ npm install` 
 
-Inicie a aplicação usando o React
+Depois inicie a aplicação usando o React
 > `$ npm start`
 
 ### [Criptografia Simétrica](https://pt.wikipedia.org/wiki/Algoritmo_de_chave_sim%C3%A9trica)
 
-Algoritmos de chave simétrica são algoritmos para criptografia que usam a mesma chave criptográfica para encriptação de texto puro e decriptação de texto cifrado. A chave, na prática, representa um segredo compartilhado entre duas ou mais partes que pode ser usado para manter uma ligação de informação privada. Este requisito de que ambas as partes possuam acesso à mesma chave secreta é uma das principais desvantagens da criptografia de chave simétrica, em comparação com a criptografia de chave pública (também conhecida como criptografia de chave assimétrica) pois utilizam duas chaves (pública e privada).
+Algoritmos de chave simétrica são algoritmos para criptografia que usam a mesma chave criptográfica para encriptação de texto puro e decriptação de texto cifrado. A chave, na prática, representa um segredo compartilhado entre duas ou mais partes que pode ser usado para manter uma ligação de informação privada. Este requisito de que ambas as partes possuam acesso à mesma chave secreta é uma das principais desvantagens da criptografia de chave simétrica, em comparação com a criptografia de chave pública (também conhecida como criptografia de chave assimétrica) pois utilizam duas chaves (pública e privada). A Cifra de César, a Cifra de Vigenère e a Cifra de Transposição são excelentes exemplos de criptografia simétrica pois utilizam uma mesma chave, seja numérica ou texto, para criptografar e descriptografar a mensagem.
 
 ### [Cifra de César](https://pt.wikipedia.org/wiki/Cifra_de_C%C3%A9sar)
 
@@ -26,4 +26,4 @@ A cifra de Vigenère é um método de criptografia que usa uma série de diferen
 
 ### [Cifra de Transposição](https://pt.wikipedia.org/wiki/Cifra_de_transposi%C3%A7%C3%A3o)
 
-Na criptografia clássica, uma cifra de transposição procede à mudança de cada letra (ou outro qualquer símbolo) no texto a cifrar para outro (sendo a decifração efectuada simplesmente invertendo o processo). Ou seja, a ordem dos caracteres é mudada. Matematicamente trata-se da aplicação de uma função bijectiva para cifrar e da respectiva função inversa para decifrar.
+Na criptografia clássica, uma cifra de transposição procede à mudança de cada letra (ou outro qualquer símbolo) no texto a cifrar para outro (sendo a decifração efetuada simplesmente invertendo o processo). Ou seja, a ordem dos caracteres é mudada. Matematicamente trata-se da aplicação de uma função bijectiva para cifrar e da respectiva função inversa para decifrar.
