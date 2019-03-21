@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Layout from '../common/layout'
-import { vegenere } from '../common/cifra'
+import { transposicao } from '../common/cifra'
 
 class Transposicao extends Component {
     constructor (props) {
@@ -8,11 +8,11 @@ class Transposicao extends Component {
         this.state = { chave: "", texto: '', textoCifrado: '' }
         this.cifraTexto = this.cifraTexto.bind(this)
         this.alteraChave = this.alteraChave.bind(this)
-        this.vegenere = this.vegenere.bind(this)
+        this.cifraTransposicao = this.cifraTransposicao.bind(this)
     }
 
-    vegenere () {      
-      const cifra = vegenere(this.state.texto, this.state.chave)
+    cifraTransposicao () {      
+      const cifra = transposicao(this.state.texto, this.state.chave)
 
       this.setState( {textoCifrado: cifra} )
     }
@@ -22,7 +22,7 @@ class Transposicao extends Component {
         
         this.setState({ texto })
 
-        this.vegenere()
+        this.cifraTransposicao()
     }
   
     alteraChave (e) {
@@ -30,7 +30,7 @@ class Transposicao extends Component {
         
         this.setState( { chave } )
         
-        this.vegenere()
+        this.cifraTransposicao()
     }
   
     render() {

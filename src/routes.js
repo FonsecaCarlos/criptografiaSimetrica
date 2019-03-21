@@ -1,6 +1,6 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom'
-
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+//import { Redirect } from 'react-router-dom'
 import Cesar from './cifraDeCesar'
 import Vegenere from './cifraDeVegenere'
 import Transposicao from './cifraDeTransposicao'
@@ -21,7 +21,7 @@ export default props => (
             <Route exact path='/' component={ Cesar } />
             <Route path='/vegenere' component={ Vegenere } />
             <Route path='/transposicao' component={ Transposicao } />
-            <Redirect from='*' to='/' />
+            {/*<Redirect from='*' to='/' />*/}
             
             <Footer/>
         </div>

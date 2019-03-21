@@ -50,4 +50,52 @@ const vegenere = (text, chave) => {
     return cifra
 }
 
-export { criptografar, vegenere }
+const getPosicaoTransposicao = (chave, letra) => {
+    let posicao=-1
+    let elemento=''
+    
+    for(let indice=0; indice<=chave.length; indice++) {
+        elemento=chave[indice]
+        if(elemento===letra){
+            posicao=indice
+            chave[indice]='*'
+            break
+        }
+    }
+    return posicao
+}
+
+const getColuna = (chave, posicao, colunas) => {
+    let coluna=''
+
+    for(let i=0; i<=colunas+1; i++) {
+        if( (posicao + (i*colunas)) <= chave.length )
+            coluna = `${coluna}${chave.charAt( posicao + (i*colunas) )}`
+    }
+    
+    return coluna
+}
+
+const transposicao = (text, chave) => {
+    let cifra = ''
+    let posicao = 0
+    let chaveOrdenada = []
+    let chaveDesordenada = []
+    
+    for(let i=0; i<chave.length; i++) {
+        chaveOrdenada[i] = chave.charAt(i)
+        chaveDesordenada[i] = chave.charAt(i)
+    }
+
+    chaveOrdenada.sort()
+    
+    for(let i=0; i<chave.length; i++) {
+        posicao = getPosicaoTransposicao(chaveDesordenada, chaveOrdenada[i])
+        cifra = `${cifra}${getColuna(text, posicao, chave.length)}`
+        console.log(chaveDesordenada)
+    }
+
+    return cifra
+}
+//hojevamosestudarauditoriadesistemasdainformacao
+export { criptografar, vegenere, transposicao }
