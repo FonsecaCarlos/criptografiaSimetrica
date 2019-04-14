@@ -8,18 +8,15 @@ const cifraCaracter = (element, tamanho) => {
         caracter = alfabeto[ (indice+tamanho)%26 ]
         }
     })
-    return caracter;
+    return caracter
 }
 
-const criptografar = (text, tamanho) => {
+const cesar = (text, tamanho) => {
     let cifra=''
-
     for (let index=0; index < text.length; index++) {
-      let element = text.charAt(index)
-      
-      cifra = `${cifra}${cifraCaracter(element, tamanho)}`
+        let element = text.charAt(index) 
+        cifra = `${cifra}${cifraCaracter(element, tamanho)}`
     }
-
     return cifra;
 }
 
@@ -42,37 +39,33 @@ const vegenere = (text, chave) => {
     for(let i=0; i<text.length; i++) {
         letra = text.charAt(i)
         letraChave = chave.charAt(i%chave.length)
-
         num = ( getPosicao(letraChave) )
-        
-        cifra = `${cifra}${criptografar(letra, num)}`
+        cifra = `${cifra}${cesar(letra, num)}`
     }
     return cifra
 }
 
-const getPosicaoTransposicao = (chave, letra) => {
+const getPosicaoTransposicao = (chaveDesordenada, letra) => {
     let posicao=-1
     let elemento=''
     
-    for(let indice=0; indice<=chave.length; indice++) {
-        elemento=chave[indice]
+    for(let indice=0; indice<=chaveDesordenada.length; indice++) {
+        elemento=chaveDesordenada[indice]
         if(elemento===letra){
             posicao=indice
-            chave[indice]='*'
+            chaveDesordenada[indice]='*'
             break
         }
     }
     return posicao
 }
 
-const getColuna = (chave, posicao, colunas) => {
+const getColunaTransposicao = (text, posicao, colunas) => {
     let coluna=''
-
     for(let i=0; i<=colunas+1; i++) {
-        if( (posicao + (i*colunas)) <= chave.length )
-            coluna = `${coluna}${chave.charAt( posicao + (i*colunas) )}`
+        if( (posicao + (i*colunas)) <= text.length )
+            coluna = `${coluna}${text.charAt( posicao + (i*colunas) )}`
     }
-    
     return coluna
 }
 
@@ -91,11 +84,10 @@ const transposicao = (text, chave) => {
     
     for(let i=0; i<chave.length; i++) {
         posicao = getPosicaoTransposicao(chaveDesordenada, chaveOrdenada[i])
-        cifra = `${cifra}${getColuna(text, posicao, chave.length)}`
-        console.log(chaveDesordenada)
+        cifra = `${cifra}${getColunaTransposicao(text, posicao, chave.length)}`
     }
 
     return cifra
 }
-//hojevamosestudarauditoriadesistemasdainformacao
-export { criptografar, vegenere, transposicao }
+
+export { cesar, vegenere, transposicao, getPosicao, getPosicaoTransposicao }
