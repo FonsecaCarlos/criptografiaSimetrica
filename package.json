@@ -1,5 +1,5 @@
 {
-  "name": "cifra-de-cesar",
+  "name": "criptografia-simetrica",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

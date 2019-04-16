@@ -1,4 +1,4 @@
-# criptografiaSimetrica
+# Criptografia Simetrica
 
 Este projeto foi desenvolvido na disciplina de Auditoria de Sistemas da Informação, no curso de Análise e Desenvolvimento de Sistemas, do Instituto Federal de Educação, Ciência e Tecnologia do Mato Grosso do Sul (IFMS), campus Nova Andradina. O professor orientador dessa aplicação foi o Fábio Duarte de Oliveira.
 
@@ -11,6 +11,8 @@ Primeiro instale as dependências do projeto:
 
 Depois inicie a aplicação usando o React
 > `$ npm start`
+
+Você pode ver ela em execução [aqui](https://criptografia-simetrica.herokuapp.com/)
 
 ### [Criptografia Simétrica](https://pt.wikipedia.org/wiki/Algoritmo_de_chave_sim%C3%A9trica)
 
